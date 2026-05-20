@@ -95,24 +95,24 @@ function createSubtotalsRow(){
     let subtotal = {}
     for (let i = 0; i < data.length - 1; i++){
         if (data[i].productName !== data[i+1].productName){
-            subtotal = new MakeRowObj(null, data[i].productCode, `TOTAL: ${data[i].productName}`, data[i].unit, orderedSums[itemsIndex], filledSums[itemsIndex], data[i].storage)
+            subtotal = new MakeRowObj(null, data[i].productCode, `TOTAL: ${data[i].productName}`, data[i].unit, orderedSubtotals[itemsIndex], filledSubtotals[itemsIndex], data[i].storage)
             data.splice(i+1, 0, subtotal)
             i++
             itemsIndex++
         }
     }
-    let lastSubtotal = new MakeRowObj(null, data[data.length - 1].productCode, `TOTAL: ${data[data.length - 1].productName}`, data[data.length - 1].unit, orderedSums[itemsIndex], filledSums[itemsIndex], data[data.length - 1].storage)
+    let lastSubtotal = new MakeRowObj(null, data[data.length - 1].productCode, `TOTAL: ${data[data.length - 1].productName}`, data[data.length - 1].unit, orderedSubtotals[itemsIndex], filledSubtotals[itemsIndex], data[data.length - 1].storage)
     data.splice(data.length, 0, lastSubtotal)    
     return data
 }
 function countStoresContainingItem (item){
-  let stores = 0
-  for (let i = 0; i < data.length; i++){
-    if (data[i].productName == item && data[i].customer !== null){
-      stores++
+    let stores = 0
+    for (let i = 0; i < data.length; i++){
+        if (data[i].productName == item && data[i].customer !== null){
+            stores++
+        }
     }
-  }
-  return stores
+    return stores
 }
 
 let delimiter = '**'
@@ -122,17 +122,18 @@ let rows = makeRows()
 let data = sortByProperty(makeArrayOfObjects())
 
 let uniqueProductNames = getUniqueProductNames()
-let orderedSums = getItemsSubtotalList('orderQty')
-let filledSums = getItemsSubtotalList('fillQty')
+let orderedSubtotals = getItemsSubtotalList('orderQty')
+let filledSubtotals = getItemsSubtotalList('fillQty')
 
 let dataWithSubtotals = createSubtotalsRow(data)
 console.table(dataWithSubtotals)
 
 // sum all subtotals
-console.log(`Ordered: ${getItemsSubtotalList('orderQty').reduce((a, c) => a + c)}`)
-console.log(`Filled: ${getItemsSubtotalList('fillQty').reduce((a, c) => a + c)}`)
+let totalOrdered = orderedSubtotals.reduce((a, c) => a + c)
+let totalFilled = filledSubtotals.reduce((a, c) => a + c)
+console.log(`Quantity: ${totalFilled} of ${totalOrdered}`)
 
 let storesWithWheat = countStoresContainingItem('BREAD WHEAT OG')
 if (storesWithWheat > 0){
-  console.log(`Stores with wheat: ${storesWithWheat}`)
+    console.log(`Stores with wheat: ${storesWithWheat}`)
 }

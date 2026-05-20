@@ -115,6 +115,39 @@ function countStoresContainingItem (item){
     return stores
 }
 
+let allCustomers = [
+    '114', 
+    '118', 
+    '123', 
+    '127', 
+    '130', 
+    '134', 
+    '136', 
+    '142', 
+    '144', 
+    '146', 
+    '148', 
+    '149', 
+    '151', 
+    '153', 
+    '154', 
+    '156', 
+    '3002', 
+    '3003', 
+    '3004', 
+    '3005', 
+    '3007', 
+    '3008', 
+    '3009', 
+    '3010', 
+    '3011', 
+    '3013', 
+    '3404', 
+    '401', 
+    '402', 
+    '403'
+]
+
 let delimiter = '**'
 let tableValues = getTableValues()
 let customers = getCustomers()
@@ -136,4 +169,10 @@ console.log(`Quantity: ${totalFilled} of ${totalOrdered}`)
 let storesWithWheat = countStoresContainingItem('BREAD WHEAT OG')
 if (storesWithWheat > 0){
     console.log(`Stores with wheat: ${storesWithWheat}`)
+}
+
+let customersSubmittedOrder = customers.map(x => x.slice(0,4).trim())
+let customersMissingOrder = allCustomers.filter(x => !customersSubmittedOrder.includes(x))
+if (customersMissingOrder.length > 0){
+    console.log(`Stores missing order (${customersMissingOrder.length}): ${customersMissingOrder}`)
 }

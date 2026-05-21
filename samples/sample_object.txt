@@ -1,0 +1,281 @@
+[
+    {
+        "customer": "114 PQ MADISON",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 6,
+        "fillQty": 6,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "118 PQ FIRST AVE",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 6,
+        "fillQty": 6,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "123 PQ LINCOLN SQ",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 5,
+        "fillQty": 5,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "127 PQ BRYANT PARK",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 8,
+        "fillQty": 8,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "130 PQ TRIBECA",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 6,
+        "fillQty": 6,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "134 PQ MINERAL SPRINGS",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 14,
+        "fillQty": 14,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "136 PQ CARNEGIE HILL/88TH ST",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 7,
+        "fillQty": 7,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "142 PQ GRAND CENTRAL WEST",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 3,
+        "fillQty": 3,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "144 PQ 97TH STREET",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 10,
+        "fillQty": 10,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "146 PQ 83RD STREET",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 5,
+        "fillQty": 5,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "148 PQ E 65TH ST",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 15,
+        "fillQty": 15,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "149 PQ 55TH & 8TH",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 5,
+        "fillQty": 5,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "151 PQ ROOSEVELT FIELD MALL",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 6,
+        "fillQty": 6,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "153 PQ 85 BROAD STREET",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 5,
+        "fillQty": 5,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "154 PQ SAILBOAT POND",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 8,
+        "fillQty": 8,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "156 PQ SOUTH END",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 2,
+        "fillQty": 2,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3002 PQ 921 BROADWAY (21)",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 6,
+        "fillQty": 6,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3003 PQ 1800 BROADWAY (58)",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 10,
+        "fillQty": 10,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3004 PQ 1535 THIRD AVE (87)",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 8,
+        "fillQty": 8,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3005 PQ 2161 BROADWAY (76)",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 7,
+        "fillQty": 7,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3007 PQ 1377 6TH AVENUE (56)",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 8,
+        "fillQty": 8,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3008 PQ 400 5TH AVE (36)",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 6,
+        "fillQty": 6,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3009 PQ 1400 BROADWAY (38)",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 6,
+        "fillQty": 6,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3010 PQ 685 3RD AVENUE (43)",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 6,
+        "fillQty": 6,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3011 PQ 370 LEXINGTON AVE (41)",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 5,
+        "fillQty": 5,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3013 PQ 339 7TH AVENUE (29)",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 6,
+        "fillQty": 6,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "3404 PQ WESTPORT",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 2,
+        "fillQty": 2,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "401 PQ NEW CANAAN",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 2,
+        "fillQty": 2,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "402 PQ RYE",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 2,
+        "fillQty": 2,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": "403 PQ GREENWICH",
+        "productCode": "RPB1005",
+        "productName": "BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 3,
+        "fillQty": 3,
+        "storage": "FINISHED PASTRY"
+    },
+    {
+        "customer": null,
+        "productCode": "RPB1005",
+        "productName": "TOTAL: BREAD FLUTE OG",
+        "unit": "EACH",
+        "orderQty": 188,
+        "fillQty": 188,
+        "storage": "FINISHED PASTRY"
+    }
+]

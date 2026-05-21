@@ -1,11 +1,21 @@
 ## Summary
-Generates a custom report for packing products by displaying a comma separated array and/or an object table in console when executed on browser.
+Generates a custom report for packing products by displaying data as JSON, object table in browser console through console.table(), or on the React web app.
 
 ## How it works
-Gets data by looking for html classes and attributes. Consolidated the data to make a comma separated array. Used a class and constructor to convert values of array into objects, assigning it with properties and values. 
+Data is retrieved from html classes and attributes and consolidated into a comma separated array. Constructor is used to make JSON row objects with the data. JSON data can be exported to web app to display an Orders By Product report. 
 
-## Room for improvement
-* Display the output in a more user-friendly front end interface using iframe to reference a read-only source.
-* Make the report more print-friendly
+## How to get the data object
+1. Copy script.js
+2. Navigate to CrunchTime's Sales Orders By Customers Consolidated Picklist report
+3. Group By Customers
+4. Ensure 6 columns sorted in this order: Product Number, Product Name, Issue Unit, Order Qty, Fill Qty, Storage Location
+5. Open browser console
+6. Paste script.js into browser console
+7. Copy the dataWithSubtotals object
 
-![preview](https://raw.githubusercontent.com/timleungtech/ordersReportGenerator/main/preview.jpg)
+## How to view table and print
+1. Go to https://timleungtech.github.io/lpq-consolidated-picklist
+2. Paste JSON into text box
+3. Print
+
+![preview](https://raw.githubusercontent.com/timleungtech/lpq-consolidated-picklist/refs/heads/main/samples/preview.jpg)

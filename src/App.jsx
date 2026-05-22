@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import './App.css'
 import DataTable from 'react-data-table-component'
 
@@ -24,6 +24,18 @@ function App() {
     day: 'numeric',
   })
 
+  const totalFillQty = useMemo(() => {
+    return data.reduce((sum, item) => {
+      return item.customer === null ? sum + item.fillQty : sum
+    }, 0)
+  }, [data])
+
+  const totalOrderQty = useMemo(() => {
+    return data.reduce((sum, item) => {
+      return item.customer === null ? sum + item.orderQty : sum
+    }, 0)
+  }, [data])
+
   return (
     <>
       <h1 className="no-print" style={{ textAlign: 'center' }}>LPQ Packing List</h1>
@@ -44,9 +56,9 @@ function App() {
           placeholder="Paste data object here"
         />
       </div>
-      <div style={{ width: '100vw', margin: 0, padding: 0 }}>
+      <div style={{ width: '100vw', margin: 0, padding: 0, textAlign: 'center' }}>
         {data.length > 0 && (<DataTable
-          title={`Expected Delivery Date: ${formattedDate}`}
+          title={`${totalFillQty} of ${totalOrderQty} for ${formattedDate}.`}
           columns={columns}
           data={data}
           striped

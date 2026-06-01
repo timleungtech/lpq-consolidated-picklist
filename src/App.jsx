@@ -3,7 +3,13 @@ import './App.css'
 import DataTable from 'react-data-table-component'
 
 function App() {
-  const [data, setData] = useState([])
+  const [data, setData] = useState({
+    data: [],
+    dateBegin: null,
+    dateEnd: null,
+    template: null,
+  })
+
   const columns = [
     { name: 'Product Code', selector: row => row.productCode, grow: 1, sortable: false },
     { name: 'Product Name', selector: row => row.productName, grow: 20, sortable: false },
@@ -14,27 +20,26 @@ function App() {
     { name: 'Storage', selector: row => row.storage, grow: 10 },
   ]
 
-  const today = new Date()
-  const tomorrow = new Date(today)
-  tomorrow.setDate(tomorrow.getDate() + 1)
-  const formattedDate = tomorrow.toLocaleDateString(undefined, {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-  })
-
   const totalFillQty = useMemo(() => {
-    return data.reduce((sum, item) => {
+    return data.data.reduce((sum, item) => {
       return item.customer === null ? sum + item.fillQty : sum
     }, 0)
-  }, [data])
+  }, [data.data])
 
   const totalOrderQty = useMemo(() => {
-    return data.reduce((sum, item) => {
+    return data.data.reduce((sum, item) => {
       return item.customer === null ? sum + item.orderQty : sum
     }, 0)
-  }, [data])
+  }, [data.data])
+
+  const tableHeaderWithSubtitle = (
+    <div style={{ padding: '10px 0' }}>
+      <h2 style={{ margin: 0, fontSize: '14px'}}>{data.template}</h2>
+      <p style={{ margin: 0, fontSize: '14px', fontWeight: 700}}>{data.dateBegin} to {data.dateEnd}</p>
+      <p style={{ margin: 0, fontSize: '14px', fontWeight: 700}}>{totalFillQty} of {totalOrderQty}</p>
+      <hr />
+    </div>
+  )
 
   return (
     <>
@@ -45,7 +50,12 @@ function App() {
             const value = e.target.value
             try {
               const parsed = JSON.parse(value)
-              setData(parsed)
+              setData({
+                data: parsed.data || [],
+                dateBegin: parsed.dateBegin || null,
+                dateEnd: parsed.dateEnd || null,
+                template: parsed.template || null,
+              })
             } catch (err) {
               // optional: keep previous data or clear
               console.log("Invalid JSON")
@@ -57,14 +67,16 @@ function App() {
         />
       </div>
       <div style={{ width: '100vw', margin: 0, padding: 0, textAlign: 'center' }}>
-        {data.length > 0 && (<DataTable
-          title={`${totalFillQty} of ${totalOrderQty} for ${formattedDate}.`}
-          columns={columns}
-          data={data}
-          striped
-          dense
-          // pagination
-        />)}
+        {data.data.length > 0 && (
+          <DataTable
+            title={tableHeaderWithSubtitle}
+            columns={columns}
+            data={data.data}
+            striped
+            dense
+            // pagination
+          />
+        )}
       </div>
     </>
   )

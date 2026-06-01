@@ -71,7 +71,7 @@ function getUniqueProductNames(){
     for (let i = 0; i < data.length; i++){
         subtotalProductNames.push(data[i].productName)
     }
-    let uniqueSubtotalNames = [...new Set(subtotalProductNames)];
+    let uniqueSubtotalNames = [...new Set(subtotalProductNames)]
     return uniqueSubtotalNames
 }
 // sum items subtotal. params: "orderQty", "fillQty"
@@ -113,6 +113,19 @@ function countStoresContainingItem (item){
         }
     }
     return stores
+}
+
+function getDivIdByLabel(labelText) {
+    // find all label text spans
+    const labels = Array.from(document.querySelectorAll('.x-form-item-label-text'))
+    // find the span that matches text in parameter
+    const targetLabel = labels.find(el => el.textContent.trim() === labelText)
+    if (targetLabel) {
+        // move up the DOM tree to the top-level div container (class 'x-field')
+        const parentDiv = targetLabel.closest('.x-field')
+        return parentDiv ? parentDiv.id : null
+    }
+    return null
 }
 
 let allCustomers = [
@@ -159,6 +172,21 @@ let orderedSubtotals = getItemsSubtotalList('orderQty')
 let filledSubtotals = getItemsSubtotalList('fillQty')
 
 let dataWithSubtotals = createSubtotalsRow(data)
+
+const dateBeginId = getDivIdByLabel('Begin Date:')
+const dateEndId = getDivIdByLabel('End Date:')
+const templateId = getDivIdByLabel('Template:')
+const dateBeginValue = document.getElementById(dateBeginId).querySelector('input').value
+const dateEndValue = document.getElementById(dateEndId).querySelector('input').value
+const templateValue = document.getElementById(templateId).querySelector('input').value
+
+let dataWithLabels = {
+    data: dataWithSubtotals,
+    dateBegin: dateBeginValue,
+    dateEnd: dateEndValue,
+    template: templateValue
+}
+
 console.table(dataWithSubtotals)
 
 // sum all subtotals
@@ -176,3 +204,5 @@ let customersMissingOrder = allCustomers.filter(x => !customersSubmittedOrder.in
 if (customersMissingOrder.length > 0){
     console.log(`Stores missing order (${customersMissingOrder.length}): ${customersMissingOrder}`)
 }
+
+console.log(dataWithLabels)

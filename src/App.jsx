@@ -12,12 +12,12 @@ function App() {
 
   const columns = [
     { name: 'Product Code', selector: row => row.productCode, grow: 1, sortable: false },
-    { name: 'Product Name', selector: row => row.productName, grow: 20, sortable: false },
-    { name: 'Customer', selector: row => row.customer, grow: 14, sortable: false },
+    { name: 'Product Name', selector: row => row.productName, grow: 40, sortable: false },
+    { name: 'Customer', selector: row => row.customer, grow: 30, sortable: false },
     { name: 'Order Qty', selector: row => row.orderQty, grow: 1, right: true },
     { name: 'Fill Qty', selector: row => row.fillQty, grow: 1, right: true },
-    { name: 'Unit', selector: row => row.unit, grow: 6 },
-    { name: 'Storage', selector: row => row.storage, grow: 10 },
+    { name: 'Unit', selector: row => row.unit, grow: 12 },
+    { name: 'Storage', selector: row => row.storage, grow: 20 },
   ]
 
   const totalFillQty = useMemo(() => {

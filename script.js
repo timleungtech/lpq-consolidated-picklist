@@ -132,38 +132,65 @@ function getDivIdByLabel(labelText) {
     return null
 }
 
-let allCustomers = [
-    '114', 
-    '118', 
-    '123', 
-    '127', 
-    '130', 
-    '134', 
-    '136', 
-    '142', 
-    '144', 
-    '146', 
-    '148', 
-    '149', 
-    '151', 
-    '153', 
-    '154', 
-    '156', 
-    '3002', 
-    '3003', 
-    '3004', 
-    '3005', 
-    '3007', 
-    '3008', 
-    '3009', 
-    '3010', 
-    '3011', 
-    '3013', 
-    '3404', 
-    '401', 
-    '402', 
-    '403'
-]
+const dateBeginId = getDivIdByLabel('Begin Date:')
+const dateEndId = getDivIdByLabel('End Date:')
+const templateId = getDivIdByLabel('Template:')
+const dateBeginValue = document.getElementById(dateBeginId).querySelector('input').value
+const dateEndValue = document.getElementById(dateEndId).querySelector('input').value
+const locationValue = document.querySelector('.ces-header-change-location .x-btn-inner').textContent
+const templateValue = document.getElementById(templateId).querySelector('input').value
+
+let allCustomers
+switch (locationValue) {
+    case "100 33RD ST BAKERY":
+        allCustomers = [
+            '114', 
+            '118', 
+            '123', 
+            '127', 
+            '130', 
+            '134', 
+            '136', 
+            '142', 
+            '144', 
+            '146', 
+            '148', 
+            '149', 
+            '151', 
+            '153', 
+            '154', 
+            '156', 
+            '3002', 
+            '3003', 
+            '3004', 
+            '3005', 
+            '3007', 
+            '3008', 
+            '3009', 
+            '3010', 
+            '3011', 
+            '3013', 
+            '3404', 
+            '401', 
+            '402', 
+            '403'
+        ]
+        break
+    case "300 TUXEDO BAKERY":
+        allCustomers = [
+            '304',
+            '307',
+            '308',
+            '309',
+            '310',
+            '311',
+            '501',
+            '502'
+        ]
+        break
+    default:
+        console.log("Error: Commissary does not exist.")
+}
 
 let delimiter = '**'
 let tableValues = getTableValues()
@@ -177,17 +204,11 @@ let filledSubtotals = getItemsSubtotalList('fillQty')
 
 let dataWithSubtotals = createSubtotalsRow(data)
 
-const dateBeginId = getDivIdByLabel('Begin Date:')
-const dateEndId = getDivIdByLabel('End Date:')
-const templateId = getDivIdByLabel('Template:')
-const dateBeginValue = document.getElementById(dateBeginId).querySelector('input').value
-const dateEndValue = document.getElementById(dateEndId).querySelector('input').value
-const templateValue = document.getElementById(templateId).querySelector('input').value
-
 let dataWithLabels = {
     data: dataWithSubtotals,
     dateBegin: dateBeginValue,
     dateEnd: dateEndValue,
+    location: locationValue,
     template: templateValue
 }
 

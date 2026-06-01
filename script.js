@@ -16,6 +16,10 @@ function getCustomers(){
     // let sixDigitCustomers = customers.map(x => x.charAt(0) == '3' ? '00' + x : '000' + x)
     return customers
 }
+// helper function to remove commas for numbers greater than 3-digits
+function cleanQty(val){
+    return String(val).replace(/,/g, '') || '0'
+}
 // make an array of rows that contains array elements with comma separated values
 function makeRows(){
     let arrayOfRows = []
@@ -29,7 +33,7 @@ function makeRows(){
             currentCustomer = customers[j]
             i += 2
         } else {
-            row = currentCustomer.concat(delimiter, items[i], delimiter, items[i+1], delimiter, items[i+2], delimiter, items[i+3], delimiter, items[i+4], delimiter, items[i+5])
+            row = currentCustomer.concat(delimiter, items[i], delimiter, items[i+1], delimiter, items[i+2], delimiter, cleanQty(items[i+3]), delimiter, cleanQty(items[i+4]), delimiter, items[i+5])
             arrayOfRows.push(row)
             i += 5
         }

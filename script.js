@@ -17,8 +17,8 @@ function getCustomers(){
     return customers
 }
 // helper function to remove commas for numbers greater than 3-digits
-function cleanQty(val){
-    return String(val).replace(/,/g, '') || '0'
+function cleanQty(qty){
+    return String(qty).replace(/,/g, '') || '0'
 }
 // make an array of rows that contains array elements with comma separated values
 function makeRows(){
@@ -137,11 +137,11 @@ const dateEndId = getDivIdByLabel('End Date:')
 const templateId = getDivIdByLabel('Template:')
 const dateBeginValue = document.getElementById(dateBeginId).querySelector('input').value
 const dateEndValue = document.getElementById(dateEndId).querySelector('input').value
-const locationValue = document.querySelector('.ces-header-change-location .x-btn-inner').textContent
+const commissaryValue = document.querySelector('.ces-header-change-location .x-btn-inner').textContent
 const templateValue = document.getElementById(templateId).querySelector('input').value
 
 let allCustomers
-switch (locationValue) {
+switch (commissaryValue) {
     case "100 33RD ST BAKERY":
         allCustomers = [
             '114', 
@@ -204,15 +204,16 @@ let filledSubtotals = getItemsSubtotalList('fillQty')
 
 let dataWithSubtotals = createSubtotalsRow(data)
 
-let dataWithLabels = {
+let dataWithMetadata = {
+    commissary: commissaryValue,
     data: dataWithSubtotals,
     dateBegin: dateBeginValue,
     dateEnd: dateEndValue,
-    location: locationValue,
     template: templateValue
 }
 
 console.table(dataWithSubtotals)
+console.log(dataWithMetadata)
 
 // sum all subtotals
 let totalOrdered = orderedSubtotals.reduce((a, c) => a + c)
@@ -229,5 +230,3 @@ let customersMissingOrder = allCustomers.filter(x => !customersSubmittedOrder.in
 if (customersMissingOrder.length > 0){
     console.log(`Stores missing order (${customersMissingOrder.length}): ${customersMissingOrder}`)
 }
-
-console.log(dataWithLabels)

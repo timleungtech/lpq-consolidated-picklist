@@ -11,11 +11,11 @@ Data is retrieved from html classes and attributes and consolidated into a comma
 4. Ensure 6 columns sorted in this order: Product Number, Product Name, Issue Unit, Order Qty, Fill Qty, Storage Location
 5. Open browser console
 6. Paste script.js into browser console
-7. Copy the dataWithSubtotals object
+7. Copy the data object
 
 ## How to view table and print
 1. Go to https://timleungtech.github.io/lpq-consolidated-picklist
-2. Paste JSON into text box
+2. Paste object into text box
 3. Print
 
 ![preview](https://raw.githubusercontent.com/timleungtech/lpq-consolidated-picklist/refs/heads/main/samples/preview.jpg)

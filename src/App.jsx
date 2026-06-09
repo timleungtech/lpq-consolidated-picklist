@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import './App.css'
+import Header from "./Header"
 import DataTable from 'react-data-table-component'
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
 
   return (
     <>
-      <h1 className="no-print" style={{ textAlign: 'center' }}>LPQ Packing List</h1>
+      <Header />
       <div className="no-print" style={{ padding: '20px', textAlign: 'center' }}>
         <textarea
           onChange={(e) => {

@@ -1,0 +1,17 @@
+.header-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 24px;
+}
+
+.header-icons a {
+  color: #fff;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.header-icons a:hover {
+  transform: scale(1.15);
+  color: #ccc;
+}

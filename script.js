@@ -230,3 +230,16 @@ let customersMissingOrder = allCustomers.filter(x => !customersSubmittedOrder.in
 if (customersMissingOrder.length > 0){
     console.log(`Stores missing order (${customersMissingOrder.length}): ${customersMissingOrder}`)
 }
+
+const customersAwaitingPicklist = [
+    ...new Set(data
+        .filter(row =>
+            row.customer &&
+            row.fillQty !== row.orderQty
+        )
+        .map(row => row.customer.slice(0, 4).trim())
+    )
+    ].sort()
+if (customersAwaitingPicklist.length){
+    console.log(`Stores awaiting picklist (${customersAwaitingPicklist.length}): ${customersAwaitingPicklist.join(',')}`)
+}

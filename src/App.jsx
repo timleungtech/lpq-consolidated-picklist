@@ -42,6 +42,18 @@ function App() {
     </div>
   )
 
+  const conditionalRowStyles = [
+  {
+    // Subtotal row styles
+    when: (row) => row.customer == null,
+    style: {
+      backgroundColor: '#DDD', 
+      boxShadow: 'inset 0px 0px 0px 1px #000', 
+      // fontWeight: '600',
+    },
+  },
+]
+
   return (
     <>
       <Header />
@@ -73,6 +85,7 @@ function App() {
             title={tableHeaderWithSubtitle}
             columns={columns}
             data={data.data}
+            conditionalRowStyles={conditionalRowStyles}
             striped
             dense
             // pagination

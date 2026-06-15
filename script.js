@@ -118,7 +118,6 @@ function countStoresContainingItem (item){
     }
     return stores
 }
-
 function getDivIdByLabel(labelText) {
     // find all label text spans
     const labels = Array.from(document.querySelectorAll('.x-form-item-label-text'))
@@ -132,12 +131,12 @@ function getDivIdByLabel(labelText) {
     return null
 }
 
+const commissaryValue = document.querySelector('.ces-header-change-location .x-btn-inner').textContent
 const dateBeginId = getDivIdByLabel('Begin Date:')
 const dateEndId = getDivIdByLabel('End Date:')
 const templateId = getDivIdByLabel('Template:')
 const dateBeginValue = document.getElementById(dateBeginId).querySelector('input').value
 const dateEndValue = document.getElementById(dateEndId).querySelector('input').value
-const commissaryValue = document.querySelector('.ces-header-change-location .x-btn-inner').textContent
 const templateValue = document.getElementById(templateId).querySelector('input').value
 
 let allCustomers
@@ -229,6 +228,8 @@ let customersSubmittedOrder = customers.map(x => x.slice(0,4).trim())
 let customersMissingOrder = allCustomers.filter(x => !customersSubmittedOrder.includes(x))
 if (customersMissingOrder.length > 0){
     console.log(`Stores missing order (${customersMissingOrder.length}): ${customersMissingOrder}`)
+} else if (allCustomers.length == customersSubmittedOrder.length){
+    console.log(`All ${customersSubmittedOrder.length} stores submitted orders!`)
 }
 
 const customersAwaitingPicklist = [

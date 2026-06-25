@@ -52,7 +52,7 @@ function App() {
       // fontWeight: '600',
     },
   },
-]
+  ]
 
   return (
     <>

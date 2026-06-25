@@ -183,7 +183,6 @@ switch (commissaryValue) {
             '309',
             '310',
             '311',
-            '501',
             '502'
         ]
         break

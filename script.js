@@ -210,7 +210,41 @@ let dataWithMetadata = {
     template: templateValue
 }
 
-console.table(dataWithSubtotals)
+// console.table(dataWithSubtotals)
+if (templateValue == 'NY - KITCHEN PREP (order by noon) (Corporate)' || 
+    templateValue == 'NY - DAILY DISTRIBUTION (order by noon) (Corporate)' || 
+    templateValue == 'NY - RETAIL (order by noon) (Corporate)'){
+    const warningsKpDd = data
+        .filter(entry => 
+            entry.orderQty % 1 !== 0 || 
+            entry.orderQty >= 3
+        )
+        .filter(entry => entry.customer !== null)
+    console.table(warningsKpDd)
+} else if (templateValue == 'NY - DANISH (order by noon) (Corporate)'){
+    const warningsDanish = data
+        .filter(entry => 
+            entry.orderQty % 1 !== 0 || 
+            entry.orderQty >= 20
+        )
+        .filter(entry => entry.customer !== null)
+    console.table(warningsDanish)
+} else if (templateValue == 'NY - DAILY PASTRY (order by noon) (Corporate)'){
+    const warningsDp = data
+        .filter(entry => 
+            entry.orderQty % 1 !== 0 || 
+            entry.orderQty >= 10 || 
+            entry.productName.includes('LARGE') || 
+            entry.productName.includes('MOUSSE CAKE CHOCOLATE')
+        )
+        .filter(entry => entry.customer !== null)
+    console.table(warningsDp)
+} else {
+    const warnings = data
+        .filter(entry => entry.customer !== null)
+    console.table(warnings)
+}
+
 console.log(dataWithMetadata)
 
 // sum all subtotals

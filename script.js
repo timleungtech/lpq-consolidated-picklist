@@ -235,7 +235,8 @@ if (templateValue == 'NY - KITCHEN PREP (order by noon) (Corporate)' ||
             entry.orderQty % 1 !== 0 || 
             entry.orderQty >= 10 || 
             entry.productName.includes('LARGE') || 
-            entry.productName.includes('MOUSSE CAKE CHOCOLATE')
+            entry.productName.includes('MOUSSE CAKE CHOCOLATE') || 
+            entry.productName.includes('TIRAMISU')
         )
         .filter(entry => entry.customer !== null)
     console.table(warningsDp)

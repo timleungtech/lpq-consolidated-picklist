@@ -43,15 +43,15 @@ function App() {
   )
 
   const conditionalRowStyles = [
-  {
-    // Subtotal row styles
-    when: (row) => row.customer == null,
-    style: {
-      backgroundColor: '#DDD', 
-      boxShadow: 'inset 0px 0px 0px 1px #000', 
-      // fontWeight: '600',
+    {
+      // Subtotal row styles
+      when: (row) => row.customer == null,
+      style: {
+        backgroundColor: '#DDD', 
+        boxShadow: 'inset 0px 0px 0px 1px #000', 
+        // fontWeight: '600',
+      },
     },
-  },
   ]
 
   return (
